@@ -1,0 +1,7 @@
+TOP 5 PROGRAM ANSWERS
+The program is not working:
+1. everything works on my computer
+2. everything worked yesterday
+3. What did you do to make it stop working?
+4. maybe you have the wrong version installed
+5. most likely you entered incorrect data.
