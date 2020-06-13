@@ -69,7 +69,7 @@ int main() {
 	int Half = First_qtr * 2;							// = 32768
 	int Thride_qtr = First_qtr * 3;						// = 49152
 	int value = (f.get() << 8) | f.get();
-	char symbl = f.get();
+	char zap = f.get();
 	int count = 0;
 	while (!f.eof())
 	{
@@ -84,24 +84,25 @@ int main() {
 				;										//ничего
 			else if (l0 >= Half)
 			{
+				value -= Half;
 				l0 -= Half;
 				h0 -= Half;
-				value -= Half;
 			}
 			else if ((l0 >= First_qtr) && (h0 < Thride_qtr))
 			{
+				value -= First_qtr;
 				l0 -= First_qtr;
 				h0 -= First_qtr;
-				value -= First_qtr;
 			}
 			else break;
-			l0 += l0; h0 += h0 + 1;
-			value += value + (((short)symbl >> (7 - count)) & 1);
+			l0 += l0;
+			h0 += h0 + 1;
+			value += value + (((short)zap >> (7 - count)) & 1);
 			count++;
 			
 			if (count == 8)
 			{
-				symbl = f.get();
+				zap = f.get();
 				count = 0;
 			}
 		}
